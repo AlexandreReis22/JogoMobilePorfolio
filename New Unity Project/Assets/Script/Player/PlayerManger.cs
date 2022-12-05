@@ -27,12 +27,5 @@ public class PlayerManger : MonoBehaviour
     {        
         rb.velocity = new Vector2(h * vel * Time.deltaTime, rb.velocity.y);
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.tag.Equals("bolinha"))
-        {            
-            rbBoll.AddForce(Vector2.up * forcePulo, ForceMode2D.Impulse);
-        }
-    }   
+     
 }
