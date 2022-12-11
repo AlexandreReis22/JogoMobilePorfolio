@@ -5,13 +5,8 @@ using UnityEngine;
 
 public class TouchPlayer : MonoBehaviour
 {
-    public BolinhaManager bolinha;
-    void Start()
-    {
+    public BolinhaManager bolinha;  
         
-    }
-
-    // Update is called once per frame
     void Update()
     {        
         if (Input.touchCount > 0)
@@ -22,12 +17,12 @@ public class TouchPlayer : MonoBehaviour
             {
                 bolinha.iniciou = true;
                 bolinha.transform.SetParent(null);
-                bolinha.rb.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
+                bolinha.rb.AddForce(Vector2.up * 65, ForceMode2D.Impulse);
             }
             if(t.phase == TouchPhase.Moved)
             {               
                  transform.position = new Vector3(transform.position.x, (float)-4.12, transform.position.z);
-                 transform.position += (Vector3)t.deltaPosition/200;                 
+                 transform.position += (Vector3)t.deltaPosition/300;                 
             }      
         }
     }

@@ -10,16 +10,7 @@ public class BolinhaManager : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-    }
-    
-    void Update()
-    {
-        
-    }
-    private void FixedUpdate()
-    {
-        
-    }
+    }      
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -30,11 +21,11 @@ public class BolinhaManager : MonoBehaviour
         }
         if (collision.collider.tag.Equals("esquerda") && iniciou)
         {
-            rb.AddForce(new Vector2(-3, 3), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(-40f, 40f), ForceMode2D.Impulse);
         } 
         else if (collision.collider.tag.Equals("direita") && iniciou)
         {
-            rb.AddForce(new Vector2(3, 3), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(40f, 40f), ForceMode2D.Impulse);
         }
     }
 }
